@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+CustomString.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
+        NSString *sentence = @"Ale Chip";
+        [sentence stringByPigLatinization];
+        
+        
+        
+
+    
     }
     return 0;
 }
