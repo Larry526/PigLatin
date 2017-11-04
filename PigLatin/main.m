@@ -12,7 +12,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        NSString *sentence = @"Ale Chip";
+        NSString *sentence = @"Hello my name is Larry";
+        NSLog(@"Original sentence: %@", sentence);
         [sentence stringByPigLatinization];
         
         

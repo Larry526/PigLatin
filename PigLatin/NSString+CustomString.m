@@ -18,6 +18,8 @@
     NSMutableArray *newSentence = [[NSMutableArray alloc] init];
     NSString *newWord;
 
+    [newSentence addObject:@"Piglatin sentence:"];
+    
     for (NSString *word in wordsinSentence) {
         
         unichar firstChar = [word characterAtIndex:0];
@@ -28,12 +30,15 @@
     
         } else {
             
-            newWord = [word substringFromIndex:1];
+            NSString *firstLetter = [word substringToIndex:1];
+            firstLetter = [firstLetter lowercaseString];
+            newWord = [word stringByAppendingString:firstLetter];
+            newWord = [newWord substringFromIndex:1];
+            newWord = [newWord stringByAppendingString:@"ay"];
+            newWord = [NSString stringWithFormat:@"%@%@",[[newWord substringToIndex:1]uppercaseString],[newWord substringFromIndex:1]];
+            
             [newSentence addObject:newWord];
-
-            
-            NSLog(@"%@",newWord);
-            
+                        
         }
         
         
